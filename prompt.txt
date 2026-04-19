@@ -1,0 +1,114 @@
+You are an expert software engineer. Generate a complete, production-ready CLI tool project called "CLI-Convert".
+
+GOAL:
+Create a Python-based CLI tool similar in style to yt-dlp that can:
+- Convert images, audio, GIFs, and videos using FFmpeg (REAL conversion, not renaming)
+- Download media from YouTube using yt-dlp and automatically convert it
+- Be installable globally as a command called "cli-convert"
+- Include an installer script for Windows
+- Include a build script to compile into a single EXE
+- Include a basic auto-update checker using GitHub API
+- Include colored CLI output
+
+REQUIREMENTS:
+
+1. PROJECT STRUCTURE:
+Create this exact structure:
+
+CLI-Convert/
+│
+├── cli_convert/
+│   ├── main.py
+│   ├── converter.py
+│   ├── updater.py
+│   └── utils.py
+│
+├── cli-convert.bat
+├── install.bat
+├── build_exe.bat
+├── requirements.txt
+└── README.md
+
+2. FUNCTIONALITY:
+
+- Use FFmpeg via subprocess for all conversions
+- Detect file types:
+  - Images: png, jpg, jpeg, webp, bmp
+  - GIF
+  - Audio: mp3, wav, aac, flac, ogg
+  - Video: mp4, mkv, avi, mov, webm
+
+- Conversion rules:
+  - Image → Video (5 seconds, no audio)
+  - GIF → Video (no audio)
+  - Audio → Video (black background with audio)
+  - Video → Video (preserve audio)
+  - Block Video → Image conversion
+
+- Add CLI usage:
+  cli-convert input output
+  cli-convert --yt <url> output.mp4
+
+- Use yt-dlp for downloading when --yt is used
+
+3. CLI EXPERIENCE:
+
+- Use the "rich" library for colored output
+- Show messages like:
+  - "Downloading..."
+  - "Converting..."
+  - "Done!"
+  - Errors in red
+
+4. INSTALLER (install.bat):
+
+- Clone repo into %USERPROFILE%\cli-convert
+- Install dependencies from requirements.txt
+- Download FFmpeg using curl.exe (NOT PowerShell curl)
+- Extract FFmpeg using PowerShell Expand-Archive
+- Add project folder to PATH using setx
+- Create cli-convert.bat launcher
+
+5. EXE BUILD:
+
+- Use pyinstaller
+- Output single-file executable named cli-convert.exe
+
+6. AUTO UPDATE:
+
+- Use GitHub API to check latest commit hash
+- Compare with local .version file
+- Print message if update is available
+
+7. CODE QUALITY:
+
+- Modular code (split across files properly)
+- Clean functions
+- No unnecessary comments
+- Use subprocess safely
+- Handle missing files and errors
+
+8. README.md:
+
+- Include:
+  - Installation steps
+  - Usage examples
+  - Requirements
+  - Example commands
+
+OUTPUT FORMAT:
+
+Generate ALL files with full code.
+Clearly separate each file like:
+
+--- FILE: cli_convert/main.py ---
+<code>
+
+--- FILE: install.bat ---
+<code>
+
+DO NOT skip any files.
+DO NOT summarize.
+DO NOT leave TODOs.
+
+Make everything fully working.
