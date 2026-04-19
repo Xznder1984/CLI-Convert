@@ -1,6 +1,9 @@
 # CLI-Convert
 
-A powerful, production-ready Python CLI tool for converting media files (images, audio, GIFs, videos) using FFmpeg, with YouTube download support similar to yt-dlp.
+A powerful, production-ready Python CLI tool for converting media files (images, audio, GIFs, videos) using FFmpeg, with YouTube download support.
+
+> **New here?** Start with the [Installation Guide](INSTALLATION.md) or jump to the [User Guide](USER_GUIDE.md)  
+> **Looking for something?** Check the [Documentation Index](INDEX.md)
 
 ## Features
 

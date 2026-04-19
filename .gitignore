@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# PyInstaller
+*.manifest
+*.spec
+cli_main.py
+installer_main.py
+
+# Build artifacts
+build/
+dist/
+!dist/.gitkeep
+*.exe
+
+# FFmpeg (large binary)
+ffmpeg/
+ffmpeg.zip
+
+# Installation artifacts
+*.pyc
+.cache/
+.pytest_cache/
+.coverage
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+
+# Project specific
+.version
+cli-convert.spec
+cli-convert-installer.spec
+version.txt
+
+# Local configuration
+.env
+.env.local
+config.local.json
+
+# User files
+QUICK_REF.txt
+test_installer.ps1
+prompt.txt

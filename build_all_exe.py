@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Create standalone executables for CLI-Convert and its installer."""
 
 import os
@@ -6,6 +7,11 @@ import sys
 import subprocess
 import shutil
 from pathlib import Path
+
+# Fix encoding for Windows console
+if sys.stdout.encoding != 'utf-8':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def build_exe(script_name, exe_name):
     """Build a single executable using pyinstaller."""
